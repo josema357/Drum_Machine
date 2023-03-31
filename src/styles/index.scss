@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+#root{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+.containers{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(150, 159, 150);
+    box-sizing: border-box;
+}

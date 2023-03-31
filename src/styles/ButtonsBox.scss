@@ -1,0 +1,16 @@
+.buttons-box{
+    width: 50%;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.drum-pad{
+    width: 30%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clip{
+    display: none;
+}
