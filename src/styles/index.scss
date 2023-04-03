@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 body{
     margin: 0;
+    background-color: #3f3f3f;
+    font-family: 'Russo One', sans-serif;
 }
 #root{
     width: 100%;
@@ -10,9 +14,16 @@ body{
     align-items: center;
 }
 .containers{
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(150, 159, 150);
+    background-color: #202020;
     box-sizing: border-box;
+    border-radius: 12px;
+}
+.logo{
+    position: absolute;
+    right: 0;
+    padding: 15px;
 }
