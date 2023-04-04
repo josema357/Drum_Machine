@@ -21,9 +21,27 @@ body{
     background-color: #202020;
     box-sizing: border-box;
     border-radius: 12px;
+    margin: auto;
 }
 .logo{
     position: absolute;
     right: 0;
     padding: 15px;
+}
+@media(max-width:600px){
+    .containers{
+        flex-direction: column;
+        width: 60%;
+        padding-bottom: 20px;
+    }
+}
+@media(max-width:480px){
+    .containers{
+        width: 80%;
+    }
+}
+@media(max-width:350px){
+    .containers{
+        width: 100%;
+    }
 }

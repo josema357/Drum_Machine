@@ -10,7 +10,7 @@ const BoxDisplay = () => {
           <div className='switch'></div>
         </div>
       </div>
-      <div id="display">display</div>
+      <div id="display">displayfffheeeeeerrrrrrrrrrrrrrrrrrr</div>
       <div className='volume'>
         <input type="range" max="1" min="0" step="0.01" defaultValue="0.3"/>
       </div>
