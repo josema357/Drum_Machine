@@ -1,13 +1,20 @@
 import React from 'react'
 import '../styles/BoxDisplay.scss'
+import { powerToogle } from '../reducers/powerSlice'
 
-const BoxDisplay = () => {
+const BoxDisplay = ({dispatch,statePower}) => {
+  console.log(statePower)
   return (
     <div className='display-box'>
       <div className='power'>
         <p>Power</p>
-        <div className='btn-change'>
-          <div className='switch'></div>
+        <div className='btn-change' style={statePower?{justifyContent:'right'}:{justifyContent:'left'}}>
+          <div 
+            className='switch' 
+            onClick={()=>{
+            dispatch(powerToogle())
+            }}
+            style={statePower?{backgroundColor:"#35cac5"}:{backgroundColor:"#ac0410"}}></div>
         </div>
       </div>
       <div id="display">displayfffheeeeeerrrrrrrrrrrrrrrrrrr</div>
