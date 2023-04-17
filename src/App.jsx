@@ -7,11 +7,12 @@ import { useDispatch, useSelector } from "react-redux"
 function App() {
   const dispatch=useDispatch();
   const {power}=useSelector(state=> state.power);
+  const {sound}=useSelector(state=> state.sound);
   return (
     <div id="drum-machine">
       <div className="containers">
-        <ButtonsBox/>
-        <BoxDisplay dispatch={dispatch} statePower={power}/>
+        <ButtonsBox dispatch={dispatch} statePower={power} stateSound={sound}/>
+        <BoxDisplay dispatch={dispatch} statePower={power} stateSound={sound}/>
         <img className="logo" src={logo} alt="logo"/>
       </div>
     </div>

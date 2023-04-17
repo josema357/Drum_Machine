@@ -1,9 +1,14 @@
 import React from 'react'
 import '../styles/BoxDisplay.scss'
 import { powerToogle } from '../reducers/powerSlice'
+import { soundToogle } from '../reducers/soundSlice'
 
-const BoxDisplay = ({dispatch,statePower}) => {
-  console.log(statePower)
+const BoxDisplay = ({dispatch,statePower,stateSound}) => {
+  const handleSound=()=>{
+    if(statePower){
+      dispatch(soundToogle());
+    }
+  }
   return (
     <div className='display-box'>
       <div className='power'>
@@ -12,7 +17,7 @@ const BoxDisplay = ({dispatch,statePower}) => {
           <div 
             className='switch' 
             onClick={()=>{
-            dispatch(powerToogle())
+            dispatch(powerToogle());
             }}
             style={statePower?{backgroundColor:"#35cac5"}:{backgroundColor:"#ac0410"}}></div>
         </div>
@@ -23,8 +28,8 @@ const BoxDisplay = ({dispatch,statePower}) => {
       </div>
       <div className='power'>
         <p>Bank</p>
-        <div className='btn-change'>
-          <div className='switch'></div>
+        <div className='btn-change' style={stateSound?{justifyContent:'right'}:{justifyContent:'left'}}>
+          <div className='switch' onClick={handleSound}></div>
         </div>
       </div>
     </div>

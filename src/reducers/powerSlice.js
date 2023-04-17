@@ -7,7 +7,7 @@ export const powerSlice=createSlice({
     name: "power",
     initialState: initialState,
     reducers: {
-        powerToogle: (state, action)=>{
+        powerToogle: (state)=>{
             state.power=!state.power;
         }
     }
