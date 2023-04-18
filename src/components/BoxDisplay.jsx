@@ -2,11 +2,13 @@ import React from 'react'
 import '../styles/BoxDisplay.scss'
 import { powerToogle } from '../reducers/powerSlice'
 import { soundToogle } from '../reducers/soundSlice'
+import { textDisplay } from '../reducers/displaySlice'
 
-const BoxDisplay = ({dispatch,statePower,stateSound}) => {
+const BoxDisplay = ({dispatch,statePower,stateSound,textToDisplay}) => {
   const handleSound=()=>{
     if(statePower){
       dispatch(soundToogle());
+      dispatch(textDisplay(stateSound ? "Heater Kit" : "Smooth Piano Kit"))
     }
   }
   return (
@@ -17,12 +19,13 @@ const BoxDisplay = ({dispatch,statePower,stateSound}) => {
           <div 
             className='switch' 
             onClick={()=>{
-            dispatch(powerToogle());
+              dispatch(powerToogle());
+              dispatch(textDisplay(statePower ? "OFF" : "ON"))
             }}
             style={statePower?{backgroundColor:"#35cac5"}:{backgroundColor:"#ac0410"}}></div>
         </div>
       </div>
-      <div id="display">displayfffheeeeeerrrrrrrrrrrrrrrrrrr</div>
+      <div id="display">{textToDisplay}</div>
       <div className='volume'>
         <input type="range" max="1" min="0" step="0.01" defaultValue="0.3"/>
       </div>
