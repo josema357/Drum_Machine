@@ -3,6 +3,8 @@ import '../styles/BoxDisplay.scss'
 import { powerToogle } from '../reducers/powerSlice'
 import { soundToogle } from '../reducers/soundSlice'
 import { textDisplay } from '../reducers/displaySlice'
+import { useDispatch } from 'react-redux'
+import { setVolume } from '../reducers/volumenSlice'
 
 const BoxDisplay = ({dispatch,statePower,stateSound,textToDisplay}) => {
   const handleSound=()=>{
@@ -10,6 +12,10 @@ const BoxDisplay = ({dispatch,statePower,stateSound,textToDisplay}) => {
       dispatch(soundToogle());
       dispatch(textDisplay(stateSound ? "Heater Kit" : "Smooth Piano Kit"))
     }
+  }
+  const handleVolumeChange=(event)=>{
+    const newVolume=parseFloat(event.target.value);
+    dispatch(setVolume(newVolume))
   }
   return (
     <div className='display-box'>
@@ -27,7 +33,7 @@ const BoxDisplay = ({dispatch,statePower,stateSound,textToDisplay}) => {
       </div>
       <div id="display">{textToDisplay}</div>
       <div className='volume'>
-        <input type="range" max="1" min="0" step="0.01" defaultValue="0.3"/>
+        <input type="range" max="1" min="0" step="0.01" defaultValue="0.3" onChange={handleVolumeChange}/>
       </div>
       <div className='power'>
         <p>Bank</p>

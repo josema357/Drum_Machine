@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState={
-    power: false,
+    power: true,
 }
 export const powerSlice=createSlice({
     name: "power",
